@@ -1,16 +1,11 @@
 app_settings:
-  # url_to_parse: !!str "http://www.gatherproxy.com/proxylist/country/?c=Russia" - REQUEST PARAM
-  # page_count: !!int 10 - REQUEST PARAM
   log_file_path: !!str "./log/logfile.log"
   host: !!str "0.0.0.0"
   port: !!int 8080
-  utility_paths:
-    temp_path: !!str "./temp"
-    download_path: !!str "./media"
 driver_params:
   driver_type: !!str "chrome"
-  driver_path: !!str "./chromedriver",
-  page_load_timeout: !!int 60
+  driver_path: !!str "./chromedriver"
+  timeout: !!int 60
 validator_params:
-  proxy_verification_link": !!str "https://google.com"
-  proxy_timeout": !!int 30
+  verification_link: !!str "https://google.com"
+  timeout: !!int 30
