@@ -8,6 +8,6 @@ class ConfigFileParsingException(Exception):
     pass
 
 
-class ConfigFileNotExists(Exception):
+class ConfigFileNotExistsException(Exception):
     """Raised when config file not exists"""
     pass
