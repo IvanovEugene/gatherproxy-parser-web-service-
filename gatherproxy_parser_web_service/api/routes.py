@@ -1,13 +1,13 @@
 from aiohttp import web
-from .views import CollectRequestHandler
+from .views import CollectV1Handler
 
 
 class RoutesInstaller:
-    def __init__(self, app: web.Application, handler: CollectRequestHandler):
+    def __init__(self, app: web.Application, handler: CollectV1Handler):
         self._routes = [
-            web.get("/v1/health", handler.health, name="health"),
-            web.get('/v1/proxy-collector', handler.swagger, name="proxy-collector-swagger"),
-            web.post('/v1/proxy-collector/collect', handler.collect, name="proxy-collector-collect")
+            web.get("/health", handler.health, name="health"),
+            web.get('/api/v1/proxy-collector', handler.swagger, name="proxy-collector-swagger"),
+            web.post('/api/v1/proxy-collector/collect', handler.collect, name="proxy-collector-collect")
         ]
         self._app = app
         self._handler = handler
