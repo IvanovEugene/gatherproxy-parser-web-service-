@@ -28,6 +28,8 @@ class Logging:
         # File handler
         if log_file_path:
             file_handler = logging.FileHandler(filename=log_file_path)
+            file_handler.setFormatter(logging.Formatter('[%(levelname)s] '
+                                                        '[%(asctime)s] %(module)s [%(name)s] %(message)s'))
             root_logger.addHandler(file_handler)
 
     @staticmethod
