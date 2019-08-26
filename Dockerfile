@@ -4,6 +4,7 @@ ENV SERVICE_PATH /var/www/
 ENV DEBIAN_FRONTEND noninteractive
 
 WORKDIR $SERVICE_PATH
+
 # Distr update
 RUN apt-get update && apt-get upgrade -y \
     && rm -rf /var/lib/apt/lists/*
