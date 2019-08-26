@@ -4,12 +4,13 @@ from marshmallow import Schema, fields
 # Config Schemas
 class AppSettingsSchema(Schema):
     log_file_path = fields.String(data_key="log_file_path")
+    log_level = fields.Integer(data_key="log_level")
+    parser_max_workers = fields.Integer(data_key="parser_max_workers")
     host = fields.String(data_key="host")
     port = fields.Integer(data_key="port")
 
 
 class DriverParamsSchema(Schema):
-    driver_type = fields.String(data_key="driver_type")
     driver_path = fields.String(data_key="driver_path")
     timeout = fields.Integer(data_key="timeout")
 
