@@ -1,5 +1,6 @@
 from aiohttp import web
 from asyncio import Lock
+from aiohttp_apispec import request_schema, docs
 from .schemas import CollectRequestSchema
 from ..async_proxy_collector.async_proxy_collector import AsyncProxyCollector
 from ..common.logging import Logging
@@ -13,12 +14,19 @@ class CollectV1Handler:
         self._logger = Logging.get_logger(name=__name__)
         self._collect_request_id = 0
 
+    @docs(
+        summary="Health check endpoint",
+    )
     async def health(self, request: web.Request) -> web.Response:
         return web.Response(body="OK")
 
     async def swagger(self, request: web.Request) -> web.Response:
         return web.Response(body="OK")
 
+    @docs(
+        summary="Endpoint for collecting and returning in response list of proxies by given parameters"
+    )
+    @request_schema(CollectRequestSchema())
     async def collect(self, request: web.Request) -> web.Response:
         incr_lock = Lock()  # Mutex for self._collect_request_id increment
         async with incr_lock:
