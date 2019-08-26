@@ -1,0 +1,12 @@
+app_settings:
+  log_file_path: !!str "./log/logfile.log"  # absolute path to logging file
+  log_level: !!int 20  # CRITICAL = 50, ERROR = 40, WARNING = 30, INFO = 20, DEBUG = 10, NOTSET = 0
+  parser_max_workers: !!int 10  # count of ProxyParser (which using Selenium) thread pool workers.
+  host: !!str "0.0.0.0"
+  port: !!int 80
+driver_params:
+  driver_path: !!str "../chromedriver"  # absolute path to chromedriver
+  timeout: !!int 60
+validator_params:
+  verification_link: !!str "https://google.com"
+  timeout: !!int 30
