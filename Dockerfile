@@ -55,7 +55,7 @@ RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.d
 # Download and unpack chromedriver
 RUN wget https://chromedriver.storage.googleapis.com/76.0.3809.68/chromedriver_linux64.zip \
     && unzip chromedriver_linux64.zip \
-    && rm -rf chromedriver_linux64.zip \
+    && rm -rf chromedriver_linux64.zip
 
 # Install Python 3.7
 RUN add-apt-repository ppa:deadsnakes/ppa \
