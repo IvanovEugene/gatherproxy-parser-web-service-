@@ -21,6 +21,9 @@ class ValidatorParamsSchema(Schema):
 
 
 class ConfigSchema(Schema):
-    app_settings = fields.Nested(nested=AppSettingsSchema, data_key="app_settings")
-    driver_params = fields.Nested(nested=DriverParamsSchema, data_key="driver_params")
-    validator_params = fields.Nested(nested=ValidatorParamsSchema, data_key="validator_params")
+    app_settings = fields.Nested(nested=AppSettingsSchema,
+                                 data_key="app_settings")
+    driver_params = fields.Nested(nested=DriverParamsSchema,
+                                  data_key="driver_params")
+    validator_params = fields.Nested(nested=ValidatorParamsSchema,
+                                     data_key="validator_params")

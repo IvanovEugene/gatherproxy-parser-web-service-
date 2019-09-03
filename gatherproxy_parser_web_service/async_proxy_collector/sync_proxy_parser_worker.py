@@ -2,8 +2,11 @@ from gatherparser import ProxyParser
 from gatherparser.engine.drivers import ChromeDriver
 
 
-# class-wrapper for ProxyParser because ProcessPoolExecutor does not works with classes which contain async functions
 class SyncProxyParserWorker:
+    """
+    class-wrapper for ProxyParser because ProcessPoolExecutor
+    does not works with classes which contain async functions
+    """
     def __init__(self, driver_params: dict):
         self._driver_params = driver_params
 
@@ -20,4 +23,5 @@ class SyncProxyParserWorker:
 
     def parse(self, page_count: int, url_to_parse: str) -> set:
         proxy_parser = self._get_proxy_parser(driver=self._get_chrome_driver())
-        return proxy_parser.get_proxies_by_page_count(page_count=page_count, url_to_parse=url_to_parse)
+        return proxy_parser.get_proxies_by_page_count(page_count=page_count,
+                                                      url_to_parse=url_to_parse)

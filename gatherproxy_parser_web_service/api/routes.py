@@ -7,7 +7,8 @@ class RoutesInstaller:
     def __init__(self, app: web.Application, handler: CollectV1Handler):
         self._routes = [
             web.get("/health", handler.health, name="health"),
-            web.post('/api/v1/proxy-collector/collect', handler.collect, name="proxy-collector-collect")
+            web.post('/api/v1/proxy-collector/collect', handler.collect,
+                     name="proxy-collector-collect")
         ]
         self._app = app
         self._handler = handler
