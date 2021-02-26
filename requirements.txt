@@ -1,6 +1,6 @@
 git+https://github.com/IvanovEugene/gatherproxy-parser.git
 pyyaml==5.1.2
-aiohttp==3.5.4
+aiohttp==3.7.4
 aiodns==2.0.0
 marshmallow==3.0.1
 aiohttp_apispec==1.4.0
